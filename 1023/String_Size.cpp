@@ -9,8 +9,16 @@ int main(int argc, char** argv) {
 	
 	cin >> x ;
 	
-	if(x[0] == x[x.size()-1]) cout << "match";
-	else cout << "No match";
+	for(int i = 0; i <x.size()/2; x++){
+		if(x[i] == x[x.size()-1-i]) ;
+		else bool mirror = true;
+	} 
+	
+	ifdef mirror
+	cout << "No match";
+	
+	endif 
+	cout << "match"
 	
 	
 	//cout << x.size();
