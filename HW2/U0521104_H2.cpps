@@ -1,0 +1,131 @@
+#include <iostream>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	string input, guess;
+	int A = 0,B = 0;
+	cin >> input ;
+	cin >> guess ;
+	
+	for(int i = 0; i<input.size(); i++ ){
+		if(input[i] == guess[i]) A++;
+		else
+			for(int j = 0; j<guess.size(); j++)
+				if(input[i] == guess[j]) B++;
+	
+	}
+	
+	cout << A << "A" << B << "B";
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	float height , weight, BMI;
+
+	//Input
+	cout << "請輸入身高(公尺): ";
+	cin >> height;
+	cout << "請輸入體重(公斤): ";
+	cin >> weight;
+
+	BMI = weight/(height*height);
+
+	cout << "BMI: " << BMI << endl;
+
+	if(BMI<18.5) cout << "過輕";
+	else if(18.5 <= BMI < 25) cout << "正常";
+	else if(25 <= BMI < 30) cout << "太胖";
+	else if(BMI >=30) cout << "過胖";
+
+
+
+
+	return 0;
+}
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	int input,sum =0,count = 0, max = 0,noarray,reverseNum = 0;
+
+	//Input overflow check
+	cin >> input;
+	if(!cin) {
+		cout << "Input Overflow" << endl;
+		return 0;
+	}
+
+	//Negitive number dective
+	if(input < 0){
+		cout << "-";
+		input = abs(input);
+	}
+
+	//Reverse print and find the max
+	while(input != 0){
+        noarray = input%10;
+        input = input/10;
+        reverseNum = reverseNum*10+noarray;
+        sum += noarray;
+        //cout << noarray;
+        if (noarray > max) max = noarray;
+        count++;
+	}
+
+	//Result print
+	cout << reverseNum;
+	cout << "\n\n";
+	cout << "sum: " << sum << endl;
+	cout << "count: " << count << endl;
+	cout << "max: " << max << endl;
+	cout << "average: " << float(sum)/float(count) << endl;
+
+
+	return 0;
+}
+
+#include <iostream>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	
+	int d = 0, f = 0, b = 0, cycle, time, delt, x;
+	
+	cout << "Total Distance: ";
+	cin >> d ;
+	cout << "Forward Distance: ";
+	cin >> f ;
+	cout << "Backward Distance: ";
+	cin >> b ;
+	
+	
+	d -= f;
+	delt = f-b;
+	if(delt == 0) return 0;
+	cycle = d/delt;
+	x = d%delt;
+	if(d>cycle*delt) cycle++;
+	time = cycle * 35;
+	d += f; 
+	if(d-cycle*delt > 0) time += 30; 
+	
+	
+	//cout << cycle*delt << endl;
+	//cout << x << endl;
+	cout << "\n" << "Total Time : " << time/60 << "h" << time%60 << \
+	"min" << "(" << time << "min)";
+	return 0;
+}
