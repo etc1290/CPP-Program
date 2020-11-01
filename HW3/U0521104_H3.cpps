@@ -1,0 +1,138 @@
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	int input, div = 1;
+	cin >> input;
+	
+	for(int i; i <9; i++){
+		if(input / div == div && input % div == 0){
+			cout << "Symmetry";
+			return 0;
+		}
+		div = div*10+1;
+	}
+	
+	cout << "Non-Symmetry";
+	
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	
+	int tri, max = 0, min;
+	
+	cin >> tri;
+	min = max = tri;
+	
+	for(int i; i < 2; i++){
+		cin >> tri;
+		if(tri > max) swap(tri,max);
+		else if(tri < min) swap(tri,min);
+	}
+	
+	if(min == 0 || min+tri < max) {
+		cout << "Non-Triangle";
+		return 0;
+	}
+	
+	if (min == tri && tri == max) cout << "Equilateral ";
+	else if (min == tri || tri == max) cout << "Isosceles ";
+	
+	if(max*max == min*min+tri*tri) cout << "Right Triangle";
+	else cout << "Triangle";
+	
+	
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	int input, fac = 1;
+	float approach_exp = 1;
+	cin >> input;
+	
+	for(int i = 1; i < input -1; i++){
+		fac *= i;
+		approach_exp += 1/float(fac);
+	}
+	
+	cout << approach_exp;
+	
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	int input,encode[3];
+	cin >> input;
+	
+	//Encode
+	cout << "Encode: ";
+	for(int i =3; i>=0 ; i--) {
+		encode[i] = (input+7)%10;
+		input /= 10;
+	}
+	swap(encode[0],encode[2]);
+	swap(encode[1],encode[3]);
+	
+	for(int i =0; i<4 ; i++) cout << encode[i];
+	
+	
+	cout << "\n";
+	//Decode
+	swap(encode[0],encode[2]);
+	swap(encode[1],encode[3]);
+	
+	cout << "Decode: ";
+	for(int i =0; i<4 ; i++){
+		cout << (encode[i]+3)%10;
+	}
+	
+	return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	int input,encode[3];
+	cin >> input;
+	
+	while (input != 0){
+		if(input >= 10){
+			cout << "X";
+			input -= 10;
+		}else if (input == 9){
+			cout << "IX";
+			input = 0;
+		}else if (input < 9 && input >=5){
+			cout << "V";
+			for(int i =0 ; i < input-5; i++) {
+				cout << "I";
+			}
+			input = 0; 
+		}else if (input == 4){
+			cout << "IV";
+		}else if (input < 4){
+			for(int i =0 ; i < input; i++) {
+				cout << "I";
+			}
+			input = 0; 
+		}
+	}
+	
+	return 0;
+}
