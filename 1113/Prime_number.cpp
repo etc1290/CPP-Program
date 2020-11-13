@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int Pcount =0 , NPcount = 0;
+int NPcount = 0;
 
 bool Prime(int n){
     if(n==1) return 0;
@@ -13,7 +13,11 @@ bool Prime(int n){
     return 1;
 }
 
+int Prime_inter(int begin, int inter){
+}
+
 int Prime_range(int begin, int end, bool show = false){
+	int Pcount = 0;
 	for(int i = begin ; i < end +1; i++ ) {
 		if(Prime(i)){
 			if(show) cout << i << " Is a Prime" << endl;
@@ -24,6 +28,7 @@ int Prime_range(int begin, int end, bool show = false){
 			NPcount++;
 		}
 	} 
+	return Pcount;
 }
  
 
@@ -42,12 +47,10 @@ int main(int argc, char** argv) {
 	if(show_input == 'y' || show_input == 'Y') show = true;
 	else show = false;
 	
-	//to Prime function
-	Prime_range(n1, n2, show);
 	
 	
 	
-	cout << "There have " << Pcount << " Prime in " << n1  << " to " << n2 << endl;
+	cout << "There have " << Prime_range(n1, n2, true) << " Prime in " << n1  << " to " << n2 << endl;
 	cout << "There have " << NPcount << " Non-prime in " << n1  << " to " << n2 << endl;
 	return 0;
 }
