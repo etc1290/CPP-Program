@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 	int n, Pcount =0 , NPcount = 0;
 	cin >> n;
 	
-	for(int i = 1 ; i < n; i++ ) {
+	for(int i = 1 ; i < n +1; i++ ) {
 		if(Prime(i)){
 			cout << i << " Is a Prime" << endl;
 			Pcount++;	
