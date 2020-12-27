@@ -12,7 +12,7 @@ string show(int c){
 	return card;
 }
 
-void shuffle(int x, int card[]){
+void porksawp(int x, int card[]){
 	int temp;
 	int ran = rand()%52;
 	temp = card[x];
@@ -30,7 +30,7 @@ int main(){
 	cout << show(rand()%52) << "\n\n";
 	
 	for(int i = 0; i < 26; i++)
-		shuffle(i,card);
+		porksawp(i,card);
 	
 	int x = 0;
 	for(int i = 0; i < 4; i++){

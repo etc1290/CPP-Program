@@ -29,7 +29,7 @@ int main(){
 	int *ptr, a = 100;
 	
 	
-	cout << "New ptr Array:" << endl;
+	cout << "New ptr arr:" << endl;
 	ptr = new int[10];
 	
 	for(int i = 0; i < 10; i++)
@@ -39,7 +39,7 @@ int main(){
 		cout << ptr[i] << "  ";
 	
 	
-	cout << "Delete ptr Array:" << endl;
+	cout << "Delete ptr arr:" << endl;
 	delete ptr;
 	cout << endl;
 
