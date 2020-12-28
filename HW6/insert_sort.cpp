@@ -41,7 +41,7 @@ int main(){
 	cout << endl;
 	for(int i=0; i<10;i++) cout << a[i] << " ";
 	
-	ssr(10,0,b);
+	ssr(10,2,b);
 	cout << endl;
 	for(int i=0; i<10;i++) cout << b[i] << " ";
 	return 0;
