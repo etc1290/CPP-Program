@@ -6,7 +6,7 @@ using namespace std;
 void BubbleSort(int arr[], int size){
 	for(int j = 0; j < size-1; j++){
 		for(int i = 0; i < size-1; i++){
-			if(arr[i+1] > arr[i]) swap(arr[i+1],arr[i]);
+			if(arr[i+1] < arr[i]) swap(arr[i+1],arr[i]);
 		}
 	} 
 	return;
@@ -19,7 +19,7 @@ void InitOrderarr(int arr[], int size){
 
 void shuffle(int arr[],int size){
 	for(int i = 0; i < size/2; i++){
-		int ran = rand()%52;
+		int ran = rand()%size;
 		swap(arr[i],arr[ran]);
 	}
 }
@@ -29,22 +29,22 @@ void printAll(int arr[], int size){
 	cout << endl;
 }
 
+void randomFill(int arr[], int size){
+	for(int i = 0; i < size; i++){
+		arr[i] = rand()%size;
+	}
+}
+
 
 int main(){
 	//Set Rendom Seed
 	srand (time(NULL));
 	
-	//Initiallize array
-	int card[52];
-	int arrLen = sizeof(card)/sizeof(card[0]);
+	int arr1[31];
+	int arr1_Len = sizeof(arr1)/sizeof(arr1[0]);
+	randomFill(arr1, arr1_Len);
 	
-	InitOrderarr(card, arrLen);
-	printAll(card, arrLen);
-	
-	shuffle(card, arrLen);
-	printAll(card, arrLen);
-	
-	BubbleSort(card, arrLen);
-	printAll(card, arrLen);
+	BubbleSort(arr1, arr1_Len);
+	printAll(arr1, arr1_Len);
 		
 }
