@@ -2,30 +2,50 @@
 
 using namespace std;
 
-void Eratosthenes(bool prime[], int n) 
-{ 
-    for (int p=2; p*p<=n; p++) { 
-        if (prime[p] == true) { 
-            for (int i=p*2; i<=n; i += p) 
-                prime[i] = false; 
-        } 
-    } 
-  
-     
-} 
 
 int main(){
-	int  n = 10000;
-	bool prime[n+1];
+	bool seat[10];
+	char c_input;
+	int passanger, pos;
 	
-	for(int i = 0; i < n+1; i++){
-		prime[i] = true;
-	} 
+	for(int i = 0; i < 10; i++) seat[i] = true;
 	
-	Eratosthenes(prime, n);
+	while(1){
+		cout << "Enter the booking system enter y or leave enter e" << endl;
+		cin >> c_input;
+		if(c_input == 'e'|| c_input == 'E') break;
+		
+		cout << "how many passanger ?(1~5)" << endl;
+		cin >> passanger;
+		cout << endl;
+		
+		booking:
+		cout << "1 means available 0 means this seats are booked." << endl;
+		cout << "number" << "\t\t";
+		for(int i = 0; i < 10; i++) cout << i << "  ";
+		cout << endl;
+		cout << "available" << "\t";
+		for(int i = 0; i < 10; i++) cout << seat[i] << "  ";
+		cout << "\n" << "Enter the seat number you want to book" << endl;
+		cin >> pos; 
+		cout << "\n\n";
+		
+		if(seat[pos]) seat[pos] = false;
+		else {
+			cout << "This seat has been booked, please choose other seat" << endl;
+			goto booking;
+		}
+		
+		if(passanger>1){
+			cout << "Please choose other seat for other passanger"<< endl;
+			passanger--;
+			goto booking;
+		} 
+		
+		
+		
+	}
 	
-	for (int p=2; p<=n; p++) 
-       if (prime[p]) 
-          cout << p << " ";
+	for(int i = 0; i < 10; i++) cout << seat[i] << "  ";
 		
 }

@@ -44,6 +44,7 @@ int main(){
 	int arr1_Len = sizeof(arr1)/sizeof(arr1[0]);
 	randomFill(arr1, arr1_Len);
 	
+	printAll(arr1, arr1_Len);
 	BubbleSort(arr1, arr1_Len);
 	printAll(arr1, arr1_Len);
 		
