@@ -1,6 +1,6 @@
 #include<iostream> 
-#include<stdlib.h>
-#include<time.h> 
+#include<cstdlib>
+#include<ctime> 
 
 using namespace std;
 
@@ -16,7 +16,7 @@ int dv(int value, int d){
 
 int *ranNum(int *array, int n){
 	for(int i=0; i < n; i++)
-		array[i] = rand()%99999+10000;
+		array[i] = rand()%89999+10000;
 } 
 
 int *bucketSort(int *array, int n, int m){
