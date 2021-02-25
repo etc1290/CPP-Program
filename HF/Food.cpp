@@ -126,11 +126,6 @@ int main(){
 				cin >> ID >> name >> mfr;
 				instData(list,ID,name,mfr,next);
 				break;
-				
-			case 'd':
-				cin >> ID >> name >> mfr;
-				delData(list,ID,name,mfr,next);
-				break;
 			
 			case 'f':
 				cout << "½Ð¿é¤J±ý¬d¸ßID : ";

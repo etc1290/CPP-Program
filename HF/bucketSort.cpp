@@ -14,12 +14,12 @@ int dv(int value, int d){
 	return res;
 }
 
-int *ranNum(int *array, int n){
+void ranNum(int *array, int n){
 	for(int i=0; i < n; i++)
 		array[i] = rand()%89999+10000;
 } 
 
-int *bucketSort(int *array, int n, int m){
+void bucketSort(int *array, int n, int m){
 	int temp[100], x = 0;
 		for(int j = 0; j < 10; j++){
 			for(int k = 0; k < n; k++){
